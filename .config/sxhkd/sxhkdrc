@@ -13,9 +13,24 @@ super + {_, ctrl + } {plus,ecaron,scaron,ccaron,rcaron,zcaron,yacute,aacute,iacu
 super + shift + {plus,ecaron,scaron,ccaron,rcaron,zcaron,yacute,aacute,iacute,eacute}
 	bspc node -d '^{1,2,3,4,5,6,7,8,9,10}' --follow
 
+#Switch workspace next, prev (xfce like)
+ctrl + alt + {Right,Left}
+	bspc desktop -f {next,prev}
+
 #Changing window focus and swapping them
 super + {_,shift + } {Up,Down,Right,Left,h,j,k,l}
 	bspc node {-f,-s} {north,south,east,west,west,south,north,east}
+
+#Layouts
+super + { shift + f,f,t}
+	bspc node -t {fullscreen,floating,tiled}
+#Resize
+#expand
+super + alt + {Left,Down,Up,Right}
+	bspc node {@west -r -20,@south -r +20,@south -r -20,@west -r +20}
+#contract
+super + alt + shift + {Left,Down,Up,Right}
+	bspc node {@east -r -20,@north -r +20,@north -r -20,@east -r +20}
 
 #Some programs
 

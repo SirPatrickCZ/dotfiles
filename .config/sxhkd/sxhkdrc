@@ -2,9 +2,6 @@
 super + q
 	bspc node -c
 
-super + Return
-	xfce4-terminal
-
 #Workspace switching and move window without focus
 super + {_, ctrl + } {plus,ecaron,scaron,ccaron,rcaron,zcaron,yacute,aacute,iacute,eacute}
 	bspc {desktop -f, node -d} '^{1,2,3,4,5,6,7,8,9,10}'

@@ -13,6 +13,10 @@ super + {_, ctrl + } {plus,ecaron,scaron,ccaron,rcaron,zcaron,yacute,aacute,iacu
 super + shift + {plus,ecaron,scaron,ccaron,rcaron,zcaron,yacute,aacute,iacute,eacute}
 	bspc node -d '^{1,2,3,4,5,6,7,8,9,10}' --follow
 
+#Changing window focus and swapping them
+super + {_,shift + } {Up,Down,Right,Left,h,j,k,l}
+	bspc node {-f,-s} {north,south,east,west,west,south,north,east}
+
 #Some programs
 
 super + Return

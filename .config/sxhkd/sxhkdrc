@@ -21,6 +21,9 @@ super + {_,shift + } {Up,Down,Right,Left,h,j,k,l}
 #Layouts
 super + { shift + f,f,t}
 	bspc node -t {fullscreen,floating,tiled}
+
+super + space
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 #Resize
 #expand
 super + alt + {Left,Down,Up,Right}

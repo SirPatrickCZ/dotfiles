@@ -2,7 +2,7 @@
 #[ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
 #Programs variables
-export TERMINAL="xfce4-terminal"
+export TERMINAL="st"
 export BROWSER="qutebrowser"
 export EDITOR="vim"
 

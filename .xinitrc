@@ -14,6 +14,6 @@ xset -b
 numlockx on
 xrandr -s 1280x768
 #xfce4-panel &
-polybar example &
+polybar bar &
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-x11 bspwm
 exec ck-launch-session dbus-launch bspwm

@@ -15,7 +15,7 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
@@ -24,7 +24,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -40,7 +40,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = filesystem xbacklight alsa memory cpu eth date
+modules-right = pulseaudio wlan filesystem cpu memory date
 
 tray-position = right
 tray-padding = 2
@@ -84,9 +84,12 @@ label-indicator-underline = ${colors.secondary}
 type = internal/fs
 interval = 25
 
-mount-0 = /
+format-mounted-underline = #4bffdc
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+mount-0 = /
+mount-1 = /mnt/DATA
+
+label-mounted = %{F#4bffdc}%mountpoint%%{F-}: %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -95,7 +98,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= #0000ff
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -112,34 +115,12 @@ label-empty-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = "CPU: "
-format-prefix-foreground = #f90000
-format-underline = #f90000
+format-prefix-foreground = #0a6cf5
+format-underline = #0a6cf5
 label = %percentage:2%%
 
 [module/memory]
@@ -148,7 +129,7 @@ interval = 2
 format-prefix = "RAM: "
 format-prefix-foreground = #4bffdc
 format-underline = #4bffdc
-label = %percentage_used%%
+label = %mb_used%
 
 [module/wlan]
 type = internal/network
@@ -174,7 +155,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #55aa55

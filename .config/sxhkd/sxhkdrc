@@ -47,4 +47,13 @@ super + Return
 	$TERMINAL
 
 super + x
-	$BROWSER
+	bspc desktop -f ^3 && $BROWSER
+
+super + a
+	pcmanfm
+
+super + s 
+	bspc desktop -f ^4 && $TERMINAL -e mocp -C /home/patrik/.config/moc/config
+
+XF86Audio{Raise,Lower}Volume
+	pamixer {-i,-d} 5

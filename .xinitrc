@@ -9,12 +9,15 @@ fi
 
 setxkbmap cz
 sxhkd &
-nitrogen --restore
+#nitrogen --restore
+setroot --restore
 xset -b
 numlockx on
-xrandr -s 1280x768
+#xrandr -s 1600x900
 #xfce4-panel &
 polybar bar &
 dunst &
+xsetroot -cursor_name left_ptr
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-x11 bspwm
-exec ck-launch-session dbus-launch bspwm
+#exec ck-launch-session dbus-launch bspwm
+exec bspwm

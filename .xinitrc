@@ -13,11 +13,13 @@ sxhkd &
 setroot --restore
 xset -b
 numlockx on
+xfce4-power-manager & 
 #xrandr -s 1600x900
 #xfce4-panel &
-polybar bar &
+#polybar bar &
 dunst &
 xsetroot -cursor_name left_ptr
+xcompmgr -l -5 -t -5 -r 4 -cC -V -b
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-x11 bspwm
-#exec ck-launch-session dbus-launch bspwm
-exec bspwm
+exec ck-launch-session dbus-launch bspwm
+#exec bspwm

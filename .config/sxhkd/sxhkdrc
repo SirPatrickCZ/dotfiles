@@ -57,3 +57,6 @@ super + s
 
 XF86Audio{Raise,Lower}Volume
 	pamixer {-i,-d} 5
+
+super + shift + u
+	/home/patrik/.local/bin/dmenuumount

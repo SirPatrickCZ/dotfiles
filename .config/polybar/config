@@ -40,7 +40,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = pulseaudio wlan filesystem cpu memory date
+modules-right = player-moc pulseaudio wlan filesystem cpu memory date
 
 tray-position = right
 tray-padding = 2
@@ -191,7 +191,8 @@ type = internal/pulseaudio
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
-
+format-volume-underline = #0a6cf5
+##4bffdc
 label-muted = volume muted
 label-muted-foreground = #666
 
@@ -239,6 +240,14 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/player-moc]
+type = custom/script
+exec = ~/.config/polybar/player-moc.sh
+interval = 3
+click-left = mocp -f &
+click-right = mocp -r &
+click-middle = mocp -G &
 
 [settings]
 screenchange-reload = true

@@ -22,6 +22,7 @@ super + {_,shift + } {Up,Down,Right,Left,h,j,k,l}
 super + { shift + f,f,t}
 	bspc node -t {fullscreen,floating,tiled}
 
+#Floating toggle
 super + space
 	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 #Resize
@@ -55,8 +56,20 @@ super + a
 super + s 
 	bspc desktop -f ^4 && $TERMINAL -e mocp -C /home/patrik/.config/moc/config
 
+#Audio
 XF86Audio{Raise,Lower}Volume
 	pamixer {-i,-d} 5
 
+XF86AudioMute
+	pamixer -t
+
+XF86AudioPlay
+	mocp -G
+
+#Dmenu unmounting via udiskie
 super + shift + u
 	/home/patrik/.local/bin/dmenuumount
+
+#Polybar toggle
+super + b
+	/home/patrik/.local/bin/polybar.sh

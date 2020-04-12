@@ -51,7 +51,7 @@ super + x
 	bspc desktop -f ^3 && $BROWSER
 
 super + a
-	pcmanfm
+	spacefm
 
 super + s 
 	bspc desktop -f ^4 && $TERMINAL -e mocp -C /home/patrik/.config/moc/config
@@ -71,5 +71,12 @@ super + shift + u
 	/home/patrik/.local/bin/dmenuumount
 
 #Polybar toggle
-super + b
+super + m
 	/home/patrik/.local/bin/polybar.sh
+
+#Power
+super + shift + s
+	sudo zzz
+
+super + Escape
+	/home/patrik/.local/bin/dmenu_shutdown

@@ -3,8 +3,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+PS1='\[\033[01;36m\][\u@\h\[\033[01;37m\] \W\[\033[01;36m\]]\$\[\033[00m\] '  #Cyam
+#PS1='[\u@\h \W]\$ '
 
+alias grep='grep --color'
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -l'
 alias la='ls -Al'
@@ -20,6 +22,9 @@ alias xbu='sudo xbps-install -Su'
 alias nas='sudo mount -t cifs -o user=public,password=,iocharset=utf8,noperm //192.168.0.119/Public /mnt/NAS'
 alias unas='sudo umount ~/NAS'
 alias numof='find ./ -type f | wc -l'
+alias aha='ssh alarm@192.168.0.118'
+
+#ex - archive extractor
 ex ()
 {
   if [ -f $1 ] ; then

@@ -3,7 +3,7 @@
 
 #Programs variables
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="qutebrowser"
 export EDITOR="vim"
 
 ##autologin at tty1

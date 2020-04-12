@@ -8,6 +8,6 @@ then
 else
 	polybar bar &
 	sleep 1
-	bspc config top_padding 25
+	bspc config top_padding 28
        	notify-send "Polybar" "Polybar activated"
 fi

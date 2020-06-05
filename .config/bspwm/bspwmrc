@@ -12,6 +12,8 @@ bspc config gapless_monocle      true
 bspc config top_padding          28
 
 /home/patrik/.local/bin/polybar.sh
+xautolock -detectsleep -time 20 -locker "/usr/bin/sudo /usr/bin/zzz" &
+
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^3'

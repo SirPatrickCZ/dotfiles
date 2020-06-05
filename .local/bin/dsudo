@@ -1,0 +1,3 @@
+#/bin/sh
+
+SUDO_ASKPASS=/home/patrik/.local/bin/dpass sudo -A $1

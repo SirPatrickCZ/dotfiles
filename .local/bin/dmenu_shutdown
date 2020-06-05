@@ -5,24 +5,25 @@
 #date            : 201602
 #notes           : Install dmenu to use this script. For the best experience create a hotkey
 
-actions=("logout\nrestart\nshutdown\nsleep")
+actions=("logout\nrestart\nvypnout\nsleep")
 action=$(echo -e $actions | dmenu -fn "-xos4-terminus-medium-r-*-*-20-*")
 case "$action" in
     logout)
-        echo 'awesome.quit()' | awesome-client #You should change this line depending on your WM
+        bspc quit
         ;;
         
     restart)
-        sudo reboot
+        sudo umount /mnt/NAS
+	sudo reboot
         ;;
 
-    shutdown)
-        sudo poweroff
-        
+    vypnout)
+        sudo umount /mnt/NAS
+	sudo poweroff
         ;;
 
     sleep)
-        sudo zzz
+	sudo zzz
         ;;
 esac
 

@@ -1,4 +1,5 @@
 Theme = ${HOME}/.config/moc/themes/black_theme
+#SoundDriver = PULSEAUDIO:JACK:ALSA:OSS
 #readtags = no
 #QueueNextSongReturn = no
 #FormatString = "%(n:%n :)%(t:%t:)%(a: \(by %a\):)%(A: \(in %A\):)"

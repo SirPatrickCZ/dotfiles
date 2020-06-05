@@ -1,3 +1,5 @@
+#BSPWM
+
 #Close focused window
 super + q
 	bspc node -c
@@ -32,6 +34,9 @@ super + alt + {Left,Down,Up,Right}
 #contract
 super + alt + shift + {Left,Down,Up,Right}
 	bspc node {@east -r -20,@north -r +20,@north -r -20,@east -r +20}
+
+
+
 
 #Some programs
 
@@ -68,7 +73,7 @@ XF86AudioPlay
 
 #Dmenu unmounting via udiskie
 super + shift + u
-	/home/patrik/.local/bin/dmenuumount
+	/home/patrik/.local/bin/dmenu_umount
 
 #Polybar toggle
 super + m
@@ -80,3 +85,15 @@ super + shift + s
 
 super + Escape
 	/home/patrik/.local/bin/dmenu_shutdown
+
+#NAS
+super + n
+	sudo mount -t cifs -o user=public,password=,iocharset=utf8,noperm //192.168.0.119/Public /mnt/NAS && notify-send "NAS" "Mount"
+
+super + shift + n
+	sudo umount /mnt/NAS && notify-send "NAS" "Unmount"
+
+#Screenshot -> Dropbox
+Print
+	scrot '%Y-%m-%d_%T.png' -e 'mv $f ~/Dropbox/Screenshots/' && exec notify-send "Scrot" "Screemshot saved to Dropbox"
+

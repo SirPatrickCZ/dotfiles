@@ -23,6 +23,9 @@ alias nas='sudo mount -t cifs -o user=public,password=,iocharset=utf8,noperm //1
 alias unas='sudo umount ~/NAS'
 alias numof='find ./ -type f | wc -l'
 alias aha='ssh alarm@192.168.0.118'
+alias xuc='xbps-install -nu | wc -l'
+
+export GOPATH=/mnt/DATA/archie/Go
 
 #ex - archive extractor
 ex ()

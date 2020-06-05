@@ -15,7 +15,7 @@ xset -b
 numlockx on
 #xfce4-power-manager & 
 #xset dpms 0 0 600
-xautolock -time 20 -locker "/usr/bin/sudo /usr/bin/zzz" &
+#xautolock -detectsleep -time 20 -locker "/usr/bin/sudo /usr/bin/zzz" &
 #xrandr -s 1600x900
 #xfce4-panel &
 #polybar bar &

@@ -17,6 +17,7 @@ height = 27
 ;offset-y = 1%
 radius = 0.0
 fixed-center = false
+locale = cs_CZ.UTF-8
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -32,6 +33,7 @@ padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
+;separator = " | "
 
 ;font-0 = fixed:pixelsize=10;1
 font-0 = Monospace Regular:size=10;1
@@ -40,7 +42,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm xwindow
 modules-center =
-modules-right = player-moc pulseaudio wlan filesystem cpu memory date
+modules-right = xbuck player-moc pulseaudio filesystem cpu memory date
 
 tray-position = right
 tray-padding = 2
@@ -133,7 +135,7 @@ label = %mb_used%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp2s0u1u2
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -188,11 +190,12 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume> 
+;<bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 format-volume-underline = #0a6cf5
-##4bffdc
+;#4bffdc
 label-muted = volume muted
 label-muted-foreground = #666
 
@@ -248,6 +251,11 @@ interval = 3
 click-left = mocp -f &
 click-right = mocp -r &
 click-middle = mocp -G &
+
+[module/xbuck]
+type = custom/script
+exec = ~/.config/polybar/xbuck.sh
+interval = 60
 
 [settings]
 screenchange-reload = true

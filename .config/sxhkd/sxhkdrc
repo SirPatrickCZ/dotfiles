@@ -35,6 +35,9 @@ super + alt + {Left,Down,Up,Right}
 super + alt + shift + {Left,Down,Up,Right}
 	bspc node {@east -r -20,@north -r +20,@north -r -20,@east -r +20}
 
+#cycle between two desktops
+super + e
+	bspc desktop -f last
 
 
 
@@ -63,6 +66,9 @@ super + s
 
 #Audio
 XF86Audio{Raise,Lower}Volume
+	pamixer {-i,-d} 5
+
+super + {KP_Add,KP_Subtract}
 	pamixer {-i,-d} 5
 
 XF86AudioMute
@@ -95,5 +101,8 @@ super + shift + n
 
 #Screenshot -> Dropbox
 Print
-	scrot '%Y-%m-%d_%T.png' -e 'mv $f ~/Dropbox/Screenshots/' && exec notify-send "Scrot" "Screemshot saved to Dropbox"
+	scrot '%Y-%m-%d_%T.png' -e 'mv $f ~/Dropbox/Screenshots/' && notify-send "Scrot" "Screemshot saved to Dropbox"
 
+#furt se to nejak sere tak tady mam zkratku na to
+super + y
+	setxkbmap cz && notify-send "Keymap" "CZ"

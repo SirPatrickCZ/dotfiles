@@ -13,6 +13,7 @@ sxhkd &
 setroot --restore
 xset -b
 numlockx on
+/usr/libexec/polkit-gnome-authentication-agent-1
 #xfce4-power-manager & 
 #xset dpms 0 0 600
 #xautolock -detectsleep -time 20 -locker "/usr/bin/sudo /usr/bin/zzz" &
@@ -28,6 +29,6 @@ kdeconnect-indicator &
 xfce4-clipman &
 nm-applet &
 
-#exec ck-launch-session dbus-launch --sh-syntax --exit-with-x11 bspwm
-exec ck-launch-session dbus-launch bspwm
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-x11 bspwm
+#exec ck-launch-session dbus-launch bspwm
 #exec bspwm

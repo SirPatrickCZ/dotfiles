@@ -106,3 +106,6 @@ Print
 #furt se to nejak sere tak tady mam zkratku na to
 super + y
 	setxkbmap cz && notify-send "Keymap" "CZ"
+
+super + c
+	mate-calculator

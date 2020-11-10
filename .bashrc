@@ -10,6 +10,7 @@ alias grep='grep --color'
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -l'
 alias la='ls -Al'
+alias lll='ls -lh'
 alias du='du -h'
 alias df='df -h'
 alias vb='vim $HOME/.bashrc'
@@ -24,6 +25,7 @@ alias unas='sudo umount ~/NAS'
 alias numof='find ./ -type f | wc -l'
 alias aha='ssh alarm@192.168.0.118'
 alias xuc='xbps-install -nu | wc -l'
+alias k='mate-calc-cmd'
 
 export GOPATH=/mnt/DATA/archie/Go
 

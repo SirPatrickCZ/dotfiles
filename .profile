@@ -1,8 +1,6 @@
 # Get the aliases and functions (from .bash_profile)
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
-#PATH="$PATH:/$HOME/.local/bin"
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
